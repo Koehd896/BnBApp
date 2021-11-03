@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
-import RoomInput from '../components/roomInput';
+import RoomInput from '../components/RoomInput';
 import Rooms from '../components/Rooms';
 
 class RoomsContainer extends Component {
@@ -8,8 +8,8 @@ class RoomsContainer extends Component {
     render() {
         return(
             <div>
-                <RoomInput />
-                <Rooms rooms={this.props.rooms}/>
+                <RoomInput addRoom={this.props.addRoom}/>
+                <Rooms rooms={this.props.rooms} />
             </div>
         )
     }
