@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import RoomInput from '../components/roomInput';
+import Rooms from '../components/Rooms';
 
 class RoomsContainer extends Component {
 
@@ -8,13 +9,14 @@ class RoomsContainer extends Component {
         return(
             <div>
                 <RoomInput />
+                <Rooms rooms={this.props.rooms}/>
             </div>
         )
     }
 }
 
 const mapStateToProps = (state) => {
-    return state;
+    return {rooms: state.rooms}
 }
 
 const mapDispatchToProps = (dispatch) => {
