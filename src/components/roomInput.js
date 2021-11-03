@@ -5,13 +5,37 @@ class RoomInput extends React.Component {
     constructor() {
         super();
         this.state = {
-            name: ""
+            title: ""
         }
+    }
+
+    handleChange = (event) => {
+        this.setState({
+            title: event.target.value
+        })
+    }
+
+    handleSubmit = (event) => {
+        event.preventDefault();
+        this.props.addRoom(this.state.title)
+        this.setState({
+            title: ""
+        })
     }
 
     render() {
         return (
-            <div>RoomInput</div>
+            <div>
+                <form onSubmit={this.handleSubmit} >
+                    <input 
+                        type="text" 
+                        name="title"
+                        id="title" 
+                        onChange={this.handleChange} >
+                    </input>
+                    <input type="submit" value="List Room" ></input>
+                </form>
+            </div>
         )
     }
 
