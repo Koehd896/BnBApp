@@ -1,8 +1,9 @@
+import uuid from 'react-uuid';
+
 export default function roomsReducer(state = [], action) {
     switch ( action.type ) {
         case "ADD_ROOM":
-            console.log("roomsReducer, state.concat(action.room):", state.concat(action.room))
-            return state.concat({title: action.room})
+            return state.concat({title: action.room, id: uuid()})
         default:
             return state
     } 

@@ -6,7 +6,7 @@ class Rooms extends Component {
     render(){
         const roomsList = this.props.rooms.map(room => {
             return(
-                <Room room={room}/>
+                <Room room={room} key={room.id}/>
             )
         })
         
