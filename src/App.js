@@ -1,16 +1,16 @@
-import './App.css';
 import RoomsContainer from './containers/RoomsContainer';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./Home"
 
 
 function App() {
   return (
-   <Router>
-    <div className="App">
-      <Route exact path="/" render={() => <div>Home</div>} />
-      <Route path="/movies" render={routerProps => <RoomsContainer {...routerProps}/>}/>
+    <div>
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/rooms" element={<RoomsContainer />}/>
+      </Routes>
     </div>
-  </Router>
   );
 }
 
