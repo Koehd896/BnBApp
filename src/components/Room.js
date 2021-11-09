@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
+
+import RoomView from './RoomView';
 
 class Room extends Component {
 
@@ -8,7 +10,7 @@ class Room extends Component {
             <div>
                 <li>
                     {this.props.room.title}
-                    <Link to={`/rooms/${this.props.room.id}`} />
+                    <Link to={`/rooms/${this.props.room.id}`}  >See More</Link>
                 </li>
             </div>
         )

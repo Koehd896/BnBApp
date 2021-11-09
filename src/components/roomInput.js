@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 class RoomInput extends React.Component {
 
@@ -40,5 +41,6 @@ class RoomInput extends React.Component {
     }
 
 }
+
 
 export default RoomInput;

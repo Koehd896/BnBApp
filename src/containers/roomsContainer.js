@@ -2,6 +2,7 @@ import { Component } from 'react';
 import { connect } from 'react-redux';
 import RoomInput from '../components/RoomInput';
 import Rooms from '../components/Rooms';
+import { Link } from 'react-router-dom';
 
 class RoomsContainer extends Component {
 
@@ -9,7 +10,7 @@ class RoomsContainer extends Component {
         return(
             <div>
                 <RoomInput addRoom={this.props.addRoom}/>
-                <Rooms rooms={this.props.rooms} />
+                <Rooms rooms={this.props.rooms} />  
             </div>
         )
     }

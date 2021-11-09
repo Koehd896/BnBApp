@@ -1,17 +1,25 @@
 import RoomsContainer from './containers/RoomsContainer';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./Home"
+import RoomView from "./components/RoomView"
+import RoomInput from './components/RoomInput';
+import { connect } from 'react-redux';
 
 
-function App() {
-  return (
-    <div>
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/rooms" element={<RoomsContainer />}/>
-      </Routes>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <Router>
+          <div>  
+              <Route exact path="/" component={Home} />
+              <Route path="/rooms" component={RoomsContainer} />
+
+
+          </div>
+      </Router> 
+    )
+  }
 }
 
 export default App;
