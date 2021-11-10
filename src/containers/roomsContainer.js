@@ -2,8 +2,7 @@ import { Component } from 'react';
 import { connect } from 'react-redux';
 import RoomInput from '../components/RoomInput';
 import Rooms from '../components/Rooms';
-import { Link } from 'react-router-dom';
-import { fetchRooms } from '../actions/roomsActions';
+import { fetchRooms } from '../actions/roomActions';
 
 class RoomsContainer extends Component {
 
@@ -15,10 +14,12 @@ class RoomsContainer extends Component {
         if(this.props.loading) {
             return <div>Loading...</div>
         } else {
-            <div>
-                <RoomInput addRoom={this.props.addRoom}/>
-                <Rooms rooms={this.props.rooms} />  
-            </div>
+            return(
+                <div>
+                    <RoomInput addRoom={this.props.addRoom}/>
+                    <Rooms rooms={this.props.rooms} />  
+                </div>
+            )
         }
 
     }
