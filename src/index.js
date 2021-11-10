@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
+import thunk from 'redux-thunk';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import rootReducer from './reducers/rootReducer';
+import { applyMiddleware, createStore } from 'redux';
+import roomsReducer from './reducers/roomsReducer';
 
-const store = createStore(rootReducer)
+const store = createStore(roomsReducer, applyMiddleware(thunk))
 
 ReactDOM.render(
   <Provider store={store}>
