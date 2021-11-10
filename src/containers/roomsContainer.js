@@ -16,7 +16,7 @@ class RoomsContainer extends Component {
         } else {
             return(
                 <div>
-                    <RoomInput addRoom={this.props.addRoom}/>
+                    <RoomInput addRoom={this.props.addRoom} rooms={this.props.rooms}/>
                     <Rooms rooms={this.props.rooms} />  
                 </div>
             )

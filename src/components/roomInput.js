@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { postRoom } from '../actions/roomActions';
 
 class RoomInput extends React.Component {
 
@@ -10,7 +11,7 @@ class RoomInput extends React.Component {
         }
     }
 
-    
+
 
     handleChange = (event) => {
         this.setState({
@@ -21,6 +22,7 @@ class RoomInput extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault();
         this.props.addRoom(this.state.title)
+        postRoom(this.props.rooms.last)
         this.setState({
             title: ""
         })
