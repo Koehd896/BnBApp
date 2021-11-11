@@ -1,3 +1,3 @@
 class RoomSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :title, :uuid
 end
