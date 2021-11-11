@@ -9,8 +9,14 @@ class Room extends Component {
         return (
             <div>
                 <li>
-                    {this.props.room.title}
-                    <Link to={`/rooms/${this.props.room.id}`}  >See More</Link>
+                    <div className="room-card">
+                        <div className="room-title">{this.props.room.title}</div>
+                        <div className="room-bedrooms">{this.props.room.bedrooms}</div>
+                        <div className="room=bathrooms">{this.props.room.bathrooms}</div>
+                        <div className="room=price">{this.props.room.price}</div>
+                        <div className="room=image">{this.props.room.image}</div>
+                        <Link to={`/rooms/${this.props.room.id}`}  >See More</Link>
+                     </div>
                 </li>
             </div>
         )
