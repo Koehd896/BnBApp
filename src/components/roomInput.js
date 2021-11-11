@@ -44,6 +44,35 @@ class RoomInput extends React.Component {
                         type="text" 
                         name="title"
                         id="title" 
+                        placeholder="name..."
+                        onChange={this.handleChange} >
+                    </input>
+                    <input
+                        type="text"
+                        name="bedrooms"
+                        id="bedrooms"
+                        placeholder="bedrooms..."
+                        onChange={this.handleChange} >
+                    </input>
+                    <input
+                        type="text"
+                        name="bathrooms"
+                        id="bathrooms"
+                        placeholder="bathrooms..."
+                        onChange={this.handleChange} >
+                    </input>
+                    <input
+                        type="text"
+                        name="price"
+                        id="price"
+                        placeholder="price..."
+                        onChange={this.handleChange} >
+                    </input>
+                    <input
+                        type="text"
+                        name="image"
+                        id="image"
+                        placeholder="image url..."
                         onChange={this.handleChange} >
                     </input>
                     <input type="submit" value="List Room" ></input>
