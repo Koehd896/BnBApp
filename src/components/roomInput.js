@@ -7,7 +7,11 @@ class RoomInput extends React.Component {
     constructor() {
         super();
         this.state = {
-            title: ""
+            title: "",
+            bedrooms: 0,
+            bathrooms: 0,
+            price: 0,
+            image: ""
         }
     }
 
@@ -24,7 +28,11 @@ class RoomInput extends React.Component {
         this.props.addRoom(this.state.title)
         this.props.postRoom(this.props.rooms.last)
         this.setState({
-            title: ""
+                title: "",
+                bedrooms: 0,
+                bathrooms: 0,
+                price: 0,
+                image: ""
         })
     }
 
@@ -40,7 +48,6 @@ class RoomInput extends React.Component {
                     </input>
                     <input type="submit" value="List Room" ></input>
                 </form>
-                <button onClick={this.props.testAction} >test action</button>
             </div>
         )
     }

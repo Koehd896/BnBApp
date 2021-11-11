@@ -50,9 +50,6 @@ const mapDispatchToProps = (dispatch) => {
         addRoom: (room) => dispatch({type: "ADD_ROOM", room}),
         fetchRooms: () => dispatch(fetchRooms()),
         postRoom: () => dispatch(postRoom),
-        testAction: () => dispatch({
-            type: "ADD_ROOMS", 
-            rooms: [{title: "test room 1", id: 123}, {title: "test room 2", id: 234}]}, )
     }
 }
 
