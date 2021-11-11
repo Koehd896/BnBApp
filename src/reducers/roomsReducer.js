@@ -9,15 +9,16 @@ export default function roomsReducer(state = { rooms: [], loading: false} , acti
                 loading: true
             };
         case "ADD_ROOMS": 
+            console.log('ADD_ROOMS action:', action)
             return {
                 ...state,
-                rooms: state.rooms.concat(),
+                rooms: [state.rooms.concat(action.rooms)],
                 loading: false
             }
         case "ADD_ROOM":
             return {
                 ...state, 
-                rooms: state.rooms.concat({title: action.room, id: uuid()}), 
+                rooms: [state.rooms.concat({title: action.room, id: uuid()})], 
                 loading: false
             };
         default:

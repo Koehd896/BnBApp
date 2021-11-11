@@ -1,6 +1,6 @@
 import RoomsContainer from './containers/RoomsContainer';
 import React from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./Home"
 import RoomView from "./components/RoomView"
 import RoomInput from './components/RoomInput';
@@ -11,12 +11,10 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-          <div>  
+          <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/rooms" component={RoomsContainer} />
-
-
-          </div>
+          </Switch>
       </Router> 
     )
   }

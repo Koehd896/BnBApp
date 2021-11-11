@@ -2,12 +2,12 @@ import { Component } from 'react';
 import { connect } from 'react-redux';
 import RoomInput from '../components/RoomInput';
 import Rooms from '../components/Rooms';
-import { fetchRooms } from '../actions/roomActions';
+import { fetchRooms, postRoom } from '../actions/roomActions';
 
 class RoomsContainer extends Component {
 
     componentDidMount() {
-        fetchRooms()
+        this.props.fetchRooms()
     }
 
     handleLoading = () => {
@@ -16,7 +16,12 @@ class RoomsContainer extends Component {
         } else {
             return(
                 <div>
-                    <RoomInput addRoom={this.props.addRoom} rooms={this.props.rooms}/>
+                    <RoomInput 
+                    addRoom={this.props.addRoom} 
+                    testAction={this.props.testAction}
+                    postRoom={this.props.postRoom}
+                    rooms={this.props.rooms}
+                    />
                     <Rooms rooms={this.props.rooms} />  
                 </div>
             )
@@ -41,7 +46,14 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return {addRoom: (room) => dispatch({type: "ADD_ROOM", room})}
+    return {
+        addRoom: (room) => dispatch({type: "ADD_ROOM", room}),
+        fetchRooms: () => dispatch(fetchRooms()),
+        postRoom: () => dispatch(postRoom),
+        testAction: () => dispatch({
+            type: "ADD_ROOMS", 
+            rooms: [{title: "test room 1", id: 123}, {title: "test room 2", id: 234}]}, )
+    }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(RoomsContainer);

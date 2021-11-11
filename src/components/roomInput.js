@@ -22,7 +22,7 @@ class RoomInput extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault();
         this.props.addRoom(this.state.title)
-        postRoom(this.props.rooms.last)
+        this.props.postRoom(this.props.rooms.last)
         this.setState({
             title: ""
         })
@@ -40,6 +40,7 @@ class RoomInput extends React.Component {
                     </input>
                     <input type="submit" value="List Room" ></input>
                 </form>
+                <button onClick={this.props.testAction} >test action</button>
             </div>
         )
     }
