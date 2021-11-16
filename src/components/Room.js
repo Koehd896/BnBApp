@@ -7,17 +7,13 @@ class Room extends Component {
 
     render() {
         return (
-            <div>
-                <li>
-                    <div className="room-card">
-                        <div className="room-title">{this.props.room.title}</div>
-                        <div className="room-bedrooms">{this.props.room.bedrooms}</div>
-                        <div className="room=bathrooms">{this.props.room.bathrooms}</div>
-                        <div className="room=price">{this.props.room.price}</div>
-                        <div className="room=image">{this.props.room.image}</div>
-                        <Link to={`/rooms/${this.props.room.id}`}  >See More</Link>
-                     </div>
-                </li>
+            <div className="room-card" >
+                <div className="room-title">Room Name: {this.props.room.title}</div>                       
+                <div className="room-bedrooms">Bedroom(s): {this.props.room.bedrooms}</div>
+                <div className="room=bathrooms">Bathroom(s): {this.props.room.bathrooms}</div>
+                <div className="room=price">Price: ${this.props.room.price}</div>                   
+                <div className="room=image"><img src={this.props.room.image} alt="room"></img></div>
+                <Link to={`/rooms/${this.props.room.uuid}`}  >See More</Link>
             </div>
         )
     }

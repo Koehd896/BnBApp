@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Room from './Room';
 import RoomView from './RoomView';
-import { Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 
 class Rooms extends Component {
 
@@ -10,10 +10,12 @@ class Rooms extends Component {
     render(){
         const roomsList = this.props.rooms.map(room => {
             return(
-               <div>
-                   <Route path="/rooms/:roomId" render={() => <RoomView room={room}/>} />
-                   <Room room={room} key={room.id}/>
-                </div>
+                <li key={room.uuid}>
+                   {/* <Room room={room} /> */}
+                   <Link to={`/rooms/${room.uuid}`} >
+                       {room.title}
+                   </Link>
+                </li>
             )
         })
         

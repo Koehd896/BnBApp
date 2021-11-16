@@ -5,21 +5,19 @@ export default function roomsReducer(state = { rooms: [], loading: false} , acti
         case "LOADING_ROOMS":
             return {
                 ...state,
-                rooms:  [...state.rooms],
                 loading: true
             };
         case "ADD_ROOMS": 
-            console.log('ADD_ROOMS action:', action)
             return {
                 ...state,
-                rooms: [state.rooms.concat(action.rooms)],
+                rooms: state.rooms.concat(action.rooms),
                 loading: false
             }
         case "ADD_ROOM":
-            console.log("ADD_ROOM hit")
+            const newRoom = {...action.room, uuid: uuid()}
             return {
                 ...state, 
-                rooms: [state.rooms.concat({title: action.room, id: uuid()})], 
+                rooms: state.rooms.concat(newRoom), 
                 loading: false
             };
         default:

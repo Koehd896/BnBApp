@@ -19,13 +19,13 @@ class RoomInput extends React.Component {
 
     handleChange = (event) => {
         this.setState({
-            title: event.target.value
+            [event.target.name]: event.target.value
         })
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
-        this.props.addRoom(this.state.title)
+        this.props.addRoom(this.state)
         this.props.postRoom(this.props.rooms.last)
         this.setState({
                 title: "",

@@ -2,10 +2,8 @@ export const fetchRooms = () => {
     return (dispatch) => {
         dispatch({type: "LOADING_ROOMS"})
         fetch('http://localhost:3001/rooms')
-        .then(response => {
-            response.json()})
+        .then(response => response.json())
         .then(responseJSON => {
-            console.log("fetchRooms responseJSON:", responseJSON)
             dispatch({type: "ADD_ROOMS", rooms: responseJSON})
         })
         .catch(error => console.log(error))
@@ -13,7 +11,7 @@ export const fetchRooms = () => {
 
 }
 
-export const postRoom = (data) => {
+export const postRoom = (room) => {
     return (dispatch) => {
         dispatch({type: "LOADING_ROOMS"})
         fetch('http://localhost:3001/rooms', {
@@ -22,11 +20,11 @@ export const postRoom = (data) => {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(room)
           }
         )
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(responseJSON => console.log(responseJSON))
     }
 
 }

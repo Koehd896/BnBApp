@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import RoomInput from '../components/RoomInput';
 import Rooms from '../components/Rooms';
 import { fetchRooms, postRoom } from '../actions/roomActions';
+import { Route, Switch, Link } from 'react-router-dom';
+import RoomView from '../components/RoomView';
 
 class RoomsContainer extends Component {
 
@@ -16,12 +18,18 @@ class RoomsContainer extends Component {
         } else {
             return(
                 <div>
-                    <RoomInput 
-                    addRoom={this.props.addRoom} 
-                    testAction={this.props.testAction}
-                    postRoom={this.props.postRoom}
-                    rooms={this.props.rooms}
-                    />
+                    <Switch>
+                        <Route path="/rooms/new">
+                            <RoomInput 
+                            addRoom={this.props.addRoom} 
+                            testAction={this.props.testAction}
+                            postRoom={this.props.postRoom}
+                            rooms={this.props.rooms}
+                            />
+                        </Route>
+                        <Route path="/rooms/:roomId" ><RoomView rooms={this.props.rooms}/></Route>
+                    </Switch>
+                    <Link to="/rooms/new">List a Room</Link>
                     <Rooms rooms={this.props.rooms} />  
                 </div>
             )

@@ -5,3 +5,28 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Room.all.each {|x| x.destroy}
+
+new_rooms = [
+    {
+        title: "room 1", 
+        uuid: 1234, 
+        bedrooms: 1, 
+        bathrooms: 1, 
+        price: 500, 
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Langes_Tannen_Schlafzimmer_01.jpg/1200px-Langes_Tannen_Schlafzimmer_01.jpg"
+    },
+    {
+        title: "room 2", 
+        uuid: 2345, 
+        bedrooms: 2, 
+        bathrooms: 2, 
+        price: 750, 
+        image: "https://upload.wikimedia.org/wikipedia/commons/2/2d/Simbavati4.jpg"
+    }
+]
+
+new_rooms.each do |room|
+    Room.create(room)
+end

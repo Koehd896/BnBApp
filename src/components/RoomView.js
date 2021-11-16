@@ -1,12 +1,13 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 
-class RoomView extends React.Component {
-    render() {
-        return <div>{this.props.room.title}</div>
-    }
+export default function RoomView(props) {
+        const params = useParams();
+        const room =  props.rooms.find(room => room.uuid === parseInt(params["roomId"], 10))
+        return <div>{room.title}</div>
 }
 
-export default RoomView;
+
 
 
 
