@@ -9,19 +9,12 @@ class Rooms extends Component {
 
     render(){
         const roomsList = this.props.rooms.map(room => {
-            return(
-                <li key={room.uuid}>
-                   {/* <Room room={room} /> */}
-                   <Link to={`/rooms/${room.uuid}`} >
-                       {room.title}
-                   </Link>
-                </li>
-            )
+            return <Room room={room} />
         })
         
         return(
             <div>
-               <ul>{roomsList}</ul>
+               {roomsList}
             </div>
         );
     }
