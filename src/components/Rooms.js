@@ -9,15 +9,17 @@ class Rooms extends Component {
 
     render(){
         const roomsList = this.props.rooms.map(room => {
-            return <Room room={room} />
+            return <li key={room.uuid}><Room room={room} /></li>
         })
         
         return(
-            <div className="container">
-               <div className="row">
-                {roomsList}
-               </div>
-            </div>
+            <ul className="list-unstyled">
+                 <div className="container">
+                    <div className="row">
+                        {roomsList}
+                    </div>
+                </div>
+            </ul>
         );
     }
 }
