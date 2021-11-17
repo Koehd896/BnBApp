@@ -19,7 +19,7 @@ class RoomsContainer extends Component {
             return(
                 <div>
                     <Switch>
-                        <Route path="/rooms/new">
+                        <Route exact path="/rooms/new">
                             <RoomInput 
                             addRoom={this.props.addRoom} 
                             testAction={this.props.testAction}
@@ -27,10 +27,10 @@ class RoomsContainer extends Component {
                             rooms={this.props.rooms}
                             />
                         </Route>
-                        <Route path="/rooms/:roomId" ><RoomView rooms={this.props.rooms}/></Route>
+                        <Route exact path="/rooms/:roomId" ><RoomView rooms={this.props.rooms}/></Route>
+                        <Route path ="/rooms"><Rooms rooms={this.props.rooms} /></Route>
                     </Switch>
                     <Link to="/rooms/new">List a Room</Link>
-                    <Rooms rooms={this.props.rooms} />  
                 </div>
             )
         }

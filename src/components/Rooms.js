@@ -1,27 +1,20 @@
 import React, {Component} from 'react';
 import Room from './Room';
 import RoomView from './RoomView';
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, useRouteMatch } from 'react-router-dom';
 
-class Rooms extends Component {
+export default function Rooms(props) {
 
-    
-
-    render(){
-        const roomsList = this.props.rooms.map(room => {
+        const roomsList = props.rooms.map(room => {
             return <li key={room.uuid}><Room room={room} /></li>
         })
-        
         return(
-            <ul className="list-unstyled">
-                 <div className="container">
-                    <div className="row">
-                        {roomsList}
+                <ul className="list-unstyled">
+                    <div className="container">
+                        <div className="row">
+                            {roomsList}
+                        </div>
                     </div>
-                </div>
-            </ul>
-        );
-    }
-}
-
-export default Rooms;
+                </ul>
+            );
+} 
