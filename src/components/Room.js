@@ -15,12 +15,14 @@ class Room extends Component {
             //     <div className="room=image"><img src={this.props.room.image} alt="room"></img></div>
             //     
             // </div>
+        <div className="col-sm">
             <div className="card" style={{width: 18 + 'rem'}}>
                 <img src={this.props.room.image} className="card-img-top" alt="room"/>
                 <div className="card-body">
-                <h5 className="card-title">{this.props.room.title}</h5>
-                <p className="card-text">$ {this.props.room.price}</p>
-                <button className="btn btn-primary"><Link to={`/rooms/${this.props.room.uuid}`}>See More</Link></button>
+                    <h5 className="card-title">{this.props.room.title}</h5>
+                    <p className="card-text">$ {this.props.room.price}</p>
+                    <button className="btn btn-primary"><Link to={`/rooms/${this.props.room.uuid}`}>See More</Link></button>
+                </div>
             </div>
         </div>
         )

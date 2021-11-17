@@ -14,10 +14,9 @@ export default function roomsReducer(state = { rooms: [], loading: false} , acti
                 loading: false
             }
         case "ADD_ROOM":
-            const newRoom = {...action.room, uuid: uuid()}
             return {
                 ...state, 
-                rooms: state.rooms.concat(newRoom), 
+                rooms: state.rooms.concat(action.room), 
                 loading: false
             };
         default:

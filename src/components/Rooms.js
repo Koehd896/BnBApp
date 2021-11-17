@@ -13,8 +13,10 @@ class Rooms extends Component {
         })
         
         return(
-            <div>
-               {roomsList}
+            <div className="container">
+               <div className="row">
+                {roomsList}
+               </div>
             </div>
         );
     }

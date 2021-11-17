@@ -24,7 +24,7 @@ export const postRoom = (room) => {
           }
         )
         .then(response => response.json())
-        .then(responseJSON => console.log(responseJSON))
+        .then(responseJSON => dispatch({type: "ADD_ROOM", room: responseJSON}))    
     }
 
 }
