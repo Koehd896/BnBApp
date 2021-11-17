@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Route, NavLink } from 'react-router-dom';
 
 import RoomView from './RoomView';
 
@@ -21,7 +21,7 @@ class Room extends Component {
                 <div className="card-body">
                     <h5 className="card-title">{this.props.room.title}</h5>
                     <p className="card-text">$ {this.props.room.price}</p>
-                    <button className="btn btn-primary"><Link to={`/rooms/${this.props.room.uuid}`}>See More</Link></button>
+                    <button className="btn btn-primary"><NavLink to={`/rooms/${this.props.room.uuid}`} className="btn-text">See More</NavLink></button>
                 </div>
             </div>
         </div>

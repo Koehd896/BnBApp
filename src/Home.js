@@ -5,7 +5,7 @@ class Home extends Component {
     render() {
         return (
             // add navbar to be displayed on all pages
-            <div>
+            <div className="navbar navbar-dark">
                 <Link to="/rooms" >See Rooms</Link>
             </div>
         )
