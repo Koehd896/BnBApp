@@ -30,7 +30,6 @@ class RoomsContainer extends Component {
                         <Route exact path="/rooms/:roomId" ><RoomView rooms={this.props.rooms}/></Route>
                         <Route path ="/rooms"><Rooms rooms={this.props.rooms} /></Route>
                     </Switch>
-                    <Link to="/rooms/new">List a Room</Link>
                 </div>
             )
         }
