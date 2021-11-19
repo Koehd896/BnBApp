@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
-import { Route, NavLink } from 'react-router-dom';
-
-import RoomView from './RoomView';
+import { NavLink } from 'react-router-dom';
 
 class Room extends Component {
 

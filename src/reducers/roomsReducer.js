@@ -1,5 +1,3 @@
-import uuid from 'react-uuid';
-
 export default function roomsReducer(state = { rooms: [], loading: false} , action) {
     switch ( action.type ) {
         case "LOADING_ROOMS":

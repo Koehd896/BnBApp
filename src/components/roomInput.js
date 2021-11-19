@@ -1,6 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { postRoom } from '../actions/roomActions';
 import uuid from 'react-uuid';
 
 class RoomInput extends React.Component {
@@ -27,8 +25,7 @@ class RoomInput extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        this.props.addRoom(this.state)
-        console.log("handleSubmit this.state", this.state)
+        // this.props.addRoom(this.state)
         this.props.postRoom(this.state)
         this.setState({
                 uuid: uuid(),
@@ -38,8 +35,6 @@ class RoomInput extends React.Component {
                 price: 0,
                 image: ""
         })
-        console.log("handleSubmit, this.props.rooms:", this.props.rooms)
-
     }
 
     render() {

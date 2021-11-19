@@ -8,7 +8,6 @@ export const fetchRooms = () => {
         })
         .catch(error => console.log(error))
     }
-
 }
 
 export const postRoom = (room) => {
@@ -26,5 +25,4 @@ export const postRoom = (room) => {
         .then(response => response.json())
         .then(responseJSON => dispatch({type: "ADD_ROOM", room: responseJSON}))    
     }
-
 }

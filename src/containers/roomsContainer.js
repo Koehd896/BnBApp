@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import RoomInput from '../components/RoomInput';
 import Rooms from '../components/Rooms';
 import { fetchRooms, postRoom } from '../actions/roomActions';
-import { Route, Switch, Link } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import RoomView from '../components/RoomView';
 
 class RoomsContainer extends Component {
@@ -28,7 +28,7 @@ class RoomsContainer extends Component {
                             />
                         </Route>
                         <Route exact path="/rooms/:roomId" ><RoomView rooms={this.props.rooms}/></Route>
-                        <Route path ="/rooms"><Rooms rooms={this.props.rooms} /></Route>
+                        <Route exact path ="/rooms"><Rooms rooms={this.props.rooms} /></Route>
                     </Switch>
                 </div>
             )
@@ -54,7 +54,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addRoom: (room) => dispatch({type: "ADD_ROOM", room}),
+        // addRoom: (room) => dispatch({type: "ADD_ROOM", room}),
         fetchRooms: () => dispatch(fetchRooms()),
         postRoom: (room) => dispatch(postRoom(room)),
     }
