@@ -12,6 +12,7 @@ class Signup extends React.Component {
     handleSubmit = (event) => {
         event.preventdefault()
         // fetch call?
+        
 
     }
 
