@@ -10,7 +10,7 @@ export const postUser = (user) => {
             body: JSON.stringify(user)
         })
         .then(response => response.json())
-        //login user action?
-        .then(jwt => dispatch({type: ""}))
+        // will be calling dispatch:
+        .then(jwt => console.log(jwt))
     }
 }
