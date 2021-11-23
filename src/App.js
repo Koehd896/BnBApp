@@ -3,6 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./Home"
 import { NavBar } from './components/NavBar';
+import { Signup } from '.components/Signup';
 
 
 
@@ -14,6 +15,7 @@ class App extends React.Component {
           <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/rooms" component={RoomsContainer} />
+              <Route path="/signup" component={Signup} />
           </Switch>
       </Router> 
     )

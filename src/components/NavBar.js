@@ -16,6 +16,9 @@ export function NavBar() {
                 <li className="nav-item">
                     <NavLink to="/rooms/new" className="nav-link">List a Room</NavLink>
                 </li>
+                <li className="nav-item">
+                    <NavLink to="/signup" className="nav-link">Sign Up</NavLink>
+                </li>
                 </ul>
             </div>
         </nav>

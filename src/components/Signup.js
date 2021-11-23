@@ -4,16 +4,18 @@ class Signup extends React.Component {
     constructor() {
         super();
         this.state = {
-            username: "",
+            name: "",
             password: ""
         }
     }
 
     handleSubmit = (event) => {
         event.preventdefault()
-        // fetch call?
-        
-
+        this.props.postUser(this.state)
+        this.setState({
+            name: "",
+            password: ""
+        })
     }
 
     handleChange = (event) => {
@@ -26,7 +28,7 @@ class Signup extends React.Component {
         return(
             <div>
                 <form onSubmit={this.handleSubmit} >
-                    <input onChange={this.handleChange} name="username" type="text"></input>
+                    <input onChange={this.handleChange} name="name" type="text"></input>
                     <input onChange={this.handleChange} name="password" type="password"></input>
                     <input type="submit"></input>
                 </form>

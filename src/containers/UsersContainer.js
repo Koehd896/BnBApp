@@ -1,6 +1,7 @@
 import React from 'react';
 import Signup from '../components/Signup';
 import { postUser } from '../actions/userActions';
+import { connect } from 'react-redux';
 
 class UsersContainer extends React.Component {
     render() {
@@ -12,12 +13,9 @@ class UsersContainer extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => {
-
-}
 
 const mapDispatchToProps = (dispatch) => {
     return {postUser: (user) => dispatch(postUser(user))}
 }
 
-export default UsersContainer;
+export default connect(null, mapDispatchToProps)(UsersContainer);
