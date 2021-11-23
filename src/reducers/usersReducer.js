@@ -5,7 +5,7 @@ export default function usersReducer(state = {user: {}, loading: false}, action)
                 ...state,
                 loading: true
             };
-        case "SIGN_UP":
+        case "NEW_USER":
             return {
                 ...state,
                 user: action.user,

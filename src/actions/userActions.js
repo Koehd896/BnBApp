@@ -11,6 +11,6 @@ export const postUser = (user) => {
         })
         .then(response => response.json())
         //login user action?
-        .then(userData => dispatch())
+        .then(jwt => dispatch({type: ""}))
     }
 }
