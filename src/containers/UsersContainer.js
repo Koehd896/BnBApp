@@ -7,7 +7,7 @@ class UsersContainer extends React.Component {
     render() {
         return(
             <div>
-                <Signup/>
+                <Signup postUser={this.props.postUser}/>
             </div>
         )
     }

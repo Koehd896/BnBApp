@@ -1,4 +1,4 @@
-import React from React;
+import React from 'react';
 
 class Signup extends React.Component {
     constructor() {
@@ -10,8 +10,8 @@ class Signup extends React.Component {
     }
 
     handleSubmit = (event) => {
-        event.preventdefault()
-        this.props.postUser(this.state)
+        event.preventDefault();
+        this.props.postUser(this.state);
         this.setState({
             name: "",
             password: ""

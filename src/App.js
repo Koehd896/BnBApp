@@ -1,9 +1,9 @@
 import RoomsContainer from './containers/RoomsContainer';
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./Home"
+import Home from "./components/Home";
 import { NavBar } from './components/NavBar';
-import { Signup } from '.components/Signup';
+import UsersContainer from './containers/UsersContainer';
 
 
 
@@ -15,7 +15,7 @@ class App extends React.Component {
           <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/rooms" component={RoomsContainer} />
-              <Route path="/signup" component={Signup} />
+              <Route path="/signup" component={UsersContainer} />
           </Switch>
       </Router> 
     )
