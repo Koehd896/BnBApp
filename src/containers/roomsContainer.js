@@ -5,6 +5,7 @@ import Rooms from '../components/Rooms';
 import { fetchRooms, postRoom } from '../actions/roomActions';
 import { Route, Switch } from 'react-router-dom';
 import RoomView from '../components/RoomView';
+import { postBooking } from '../actions/bookingActions';
 
 class RoomsContainer extends Component {
 
@@ -27,7 +28,13 @@ class RoomsContainer extends Component {
                             rooms={this.props.rooms}
                             />
                         </Route>
-                        <Route exact path="/rooms/:roomId" ><RoomView rooms={this.props.rooms}/></Route>
+                        <Route exact path="/rooms/:roomId" >
+                            <RoomView 
+                            rooms={this.props.rooms} 
+                            user={this.props.user} 
+                            postBooking={this.props.postBooking}
+                            />
+                        </Route>
                         <Route exact path ="/rooms"><Rooms rooms={this.props.rooms} /></Route>
                     </Switch>
                 </div>
@@ -47,16 +54,17 @@ class RoomsContainer extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        rooms: state.rooms,
+        rooms: state.roomsReducer.rooms,
+        user: state.usersReducer.user,
         loading: state.loading
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        // addRoom: (room) => dispatch({type: "ADD_ROOM", room}),
         fetchRooms: () => dispatch(fetchRooms()),
         postRoom: (room) => dispatch(postRoom(room)),
+        postBooking: (booking) => dispatch(postBooking(booking))
     }
 }
 

@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
     skip_before_action :authorized, only: [:create]
 
-    def create
+    def create 
       @user = User.create(user_params)
       if @user
         @token = encode_token(user_id: @user.id)

@@ -10,7 +10,10 @@ export const postUser = (user) => {
             body: JSON.stringify(user)
         })
         .then(response => response.json())
-        // will be calling dispatch:
-        .then(jwt => console.log(jwt))
+        .then(data => {
+            console.log("response data.user:", data.user)
+            localStorage.setItem("jwt", data.jwt)  
+            return dispatch({type: "LOGIN_USER", user: data.user})
+        })
     }
 }

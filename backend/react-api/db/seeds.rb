@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Room.all.each {|x| x.destroy}
+User.all.each {|user| user.destroy}
+Booking.all.each {|booking| booking.destroy}
 
 new_rooms = [
     {

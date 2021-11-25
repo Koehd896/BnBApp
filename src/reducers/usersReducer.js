@@ -5,10 +5,10 @@ export default function usersReducer(state = {user: {}, loading: false}, action)
                 ...state,
                 loading: true
             };
-        case "NEW_USER":
+        case "LOGIN_USER":
             return {
                 ...state,
-                user: action.user,
+                user: {name: action.user.name, id: action.user.id},
                 loading: false
             }
         default:

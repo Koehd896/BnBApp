@@ -13,9 +13,8 @@ class UsersContainer extends React.Component {
     }
 }
 
-
 const mapDispatchToProps = (dispatch) => {
-    return {postUser: (user) => dispatch(postUser(user))}
+    return { postUser: (user) => dispatch(postUser(user)) }
 }
 
 export default connect(null, mapDispatchToProps)(UsersContainer);

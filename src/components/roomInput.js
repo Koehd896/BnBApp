@@ -25,7 +25,6 @@ class RoomInput extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        // this.props.addRoom(this.state)
         this.props.postRoom(this.state)
         this.setState({
                 uuid: uuid(),

@@ -6,9 +6,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { applyMiddleware, createStore } from 'redux';
-import roomsReducer from './reducers/roomsReducer';
+import rootReducer from './reducers/rootReducer';
 
-const store = createStore(roomsReducer, applyMiddleware(thunk))
+const store = createStore(
+  rootReducer, 
+  applyMiddleware(thunk)
+  );
 
 ReactDOM.render(
   <Provider store={store}>

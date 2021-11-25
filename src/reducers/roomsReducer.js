@@ -5,7 +5,7 @@ export default function roomsReducer(state = { rooms: [], loading: false} , acti
                 ...state,
                 loading: true
             };
-        case "ADD_ROOMS": 
+        case "ADD_ROOMS":
             return {
                 ...state,
                 rooms: state.rooms.concat(action.rooms),
