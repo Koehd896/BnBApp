@@ -5,7 +5,7 @@ import Rooms from '../components/Rooms';
 import { fetchRooms, postRoom } from '../actions/roomActions';
 import { Route, Switch } from 'react-router-dom';
 import RoomView from '../components/RoomView';
-import { postBooking } from '../actions/bookingActions';
+import { postBooking, fetchBookings } from '../actions/bookingActions';
 
 class RoomsContainer extends Component {
 
@@ -30,9 +30,15 @@ class RoomsContainer extends Component {
                         </Route>
                         <Route exact path="/rooms/:roomId" >
                             <RoomView 
-                            rooms={this.props.rooms} 
-                            user={this.props.user} 
-                            postBooking={this.props.postBooking}
+                                rooms={this.props.rooms} 
+                                user={this.props.user} 
+                                postBooking={this.props.postBooking}
+                            />
+                        </Route>
+                        <Route exact path="/rooms/:userId/bookings">
+                            <Rooms 
+                                rooms={this.props.rooms} 
+                                user={this.props.user}
                             />
                         </Route>
                         <Route exact path ="/rooms"><Rooms rooms={this.props.rooms} /></Route>
@@ -64,7 +70,8 @@ const mapDispatchToProps = (dispatch) => {
     return {
         fetchRooms: () => dispatch(fetchRooms()),
         postRoom: (room) => dispatch(postRoom(room)),
-        postBooking: (booking) => dispatch(postBooking(booking))
+        postBooking: (booking) => dispatch(postBooking(booking)),
+        fetchBookings: (user) => dispatch(fetchBookings(user))
     }
 }
 

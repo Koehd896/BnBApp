@@ -15,3 +15,7 @@ export const postBooking = (booking) => {
         .then(booking => console.log(booking))
     }
 }
+
+export const fetchBookings = (user) => {
+    const token = localStorage.getItem("jwt")
+}
