@@ -1,4 +1,5 @@
 export const postBooking = (booking) => {
+    console.log("postBooking hit")
     const token = localStorage.getItem("jwt")
     return (dispatch) => {
         dispatch({type: "LOADING_ROOMS"})
@@ -19,7 +20,7 @@ export const postBooking = (booking) => {
 export const fetchBookings = (user) => {
     const token = localStorage.getItem("jwt")
     return (dispatch) => {
-        dispatch({type: "LOADING_ROOMS"}),
+        dispatch({type: "LOADING_ROOMS"})
         fetch(`http://localhost:3001/${user.id}/bookings`, {
             method: "GET",
             headers: {

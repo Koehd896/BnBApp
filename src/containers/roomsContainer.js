@@ -28,16 +28,16 @@ class RoomsContainer extends Component {
                             rooms={this.props.rooms}
                             />
                         </Route>
+                        <Route exact path="/rooms/:userId/bookings">
+                            <Rooms 
+                               rooms={this.props.bookings}
+                            />
+                        </Route>
                         <Route exact path="/rooms/:roomId" >
                             <RoomView 
                                 rooms={this.props.rooms} 
                                 user={this.props.user} 
                                 postBooking={this.props.postBooking}
-                            />
-                        </Route>
-                        <Route exact path="/rooms/:userId/bookings">
-                            <Rooms 
-                               rooms={this.props.bookings}
                             />
                         </Route>
                         <Route exact path ="/rooms"><Rooms rooms={this.props.rooms} /></Route>
