@@ -37,8 +37,7 @@ class RoomsContainer extends Component {
                         </Route>
                         <Route exact path="/rooms/:userId/bookings">
                             <Rooms 
-                                rooms={this.props.rooms} 
-                                user={this.props.user}
+                               rooms={this.props.bookings}
                             />
                         </Route>
                         <Route exact path ="/rooms"><Rooms rooms={this.props.rooms} /></Route>
@@ -62,6 +61,7 @@ const mapStateToProps = (state) => {
     return {
         rooms: state.roomsReducer.rooms,
         user: state.usersReducer.user,
+        bookings: state.bookingsReducer.bookings,
         loading: state.loading
     }
 }
