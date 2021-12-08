@@ -5,10 +5,11 @@ export default function bookingsReducer(state = { bookings: [], loading: false},
                 ...state,
                 loading: true
             };
-        case "ADD_BOOKINGS":
+        case "ADD_BOOKING":
+            console.log("ADD_BOOKING hit")
             return {
                 ...state,
-                bookings: state.bookings.concat(action.bookings),
+                bookings: state.bookings.concat(action.booking),
                 loading: false
             }
         default:

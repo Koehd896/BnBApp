@@ -2,8 +2,9 @@ import RoomsContainer from './containers/RoomsContainer';
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./components/Home";
-import { NavBar } from './components/NavBar';
+import NavBar from './components/NavBar';
 import UsersContainer from './containers/UsersContainer';
+import { connect } from 'react-redux';
 
 
 
@@ -11,15 +12,20 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-          <NavBar/>
+          <NavBar />
           <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/rooms" component={RoomsContainer} />
               <Route path="/signup" component={UsersContainer} />
+              <Route path="/login" component={UsersContainer} />
           </Switch>
       </Router> 
     )
   }
+}
+
+const mapStateToProps = (state) => {
+  return { user: state.user }
 }
 
 export default App;

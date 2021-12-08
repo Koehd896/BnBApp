@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import RoomInput from '../components/RoomInput';
 import Rooms from '../components/Rooms';
 import { fetchRooms, postRoom } from '../actions/roomActions';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, NavLink } from 'react-router-dom';
 import RoomView from '../components/RoomView';
 import { postBooking, fetchBookings } from '../actions/bookingActions';
 
@@ -13,12 +13,21 @@ class RoomsContainer extends Component {
         this.props.fetchRooms()
     }
 
+    findBookings = (bookings) => {
+        return bookings.map(booking => this.props.rooms.find(room => {
+            return room.id === booking.room_id})
+        )
+    }
+
     handleLoading = () => {
         if(this.props.loading) {
             return <div>Loading...</div>
         } else {
+            console.log("RoomsContainer user:", this.props.user)
+            console.log("RoomsContainer findBookings: ", this.findBookings(this.props.bookings))
             return(
                 <div>
+                    {/* { this.props.user.name ? <NavLink to={`/users/${this.props.user.id}/bookings`}>My Rooms</NavLink> : null } */}
                     <Switch>
                         <Route exact path="/rooms/new">
                             <RoomInput 
@@ -28,11 +37,7 @@ class RoomsContainer extends Component {
                             rooms={this.props.rooms}
                             />
                         </Route>
-                        <Route exact path="/rooms/:userId/bookings">
-                            <Rooms 
-                               rooms={this.props.bookings}
-                            />
-                        </Route>
+                        
                         <Route exact path="/rooms/:roomId" >
                             <RoomView 
                                 rooms={this.props.rooms} 
@@ -41,6 +46,9 @@ class RoomsContainer extends Component {
                             />
                         </Route>
                         <Route exact path ="/rooms"><Rooms rooms={this.props.rooms} /></Route>
+                        <Route path="*">
+                            <div>No Match</div>
+                        </Route>
                     </Switch>
                 </div>
             )
@@ -71,7 +79,7 @@ const mapDispatchToProps = (dispatch) => {
         fetchRooms: () => dispatch(fetchRooms()),
         postRoom: (room) => dispatch(postRoom(room)),
         postBooking: (booking) => dispatch(postBooking(booking)),
-        fetchBookings: (user) => dispatch(fetchBookings(user))
+        // fetchBookings: (user) => dispatch(fetchBookings(user))
     }
 }
 

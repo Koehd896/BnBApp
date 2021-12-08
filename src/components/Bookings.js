@@ -1,9 +1,7 @@
 import React from 'react';
 import Room from './Room';
 
-export default function Rooms(props) {
-
-        console.log("Rooms props:", props)
+export default function Bookings(props) {
 
         let roomsList = props.rooms.map(room => {
             return <li key={room.uuid}><Room room={room} /></li>

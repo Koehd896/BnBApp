@@ -11,6 +11,12 @@ export default function usersReducer(state = {user: {}, loading: false}, action)
                 user: {name: action.user.name, id: action.user.id},
                 loading: false
             }
+        case "LOGOUT_USER":
+            return {
+                ...state,
+                user: {},
+                loading: false
+            }
         default:
             return state;
     }
