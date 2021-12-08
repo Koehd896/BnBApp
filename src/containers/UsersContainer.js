@@ -12,12 +12,11 @@ class UsersContainer extends React.Component {
         return(
             <div>
                 <Switch>
-                    <Route exact path="/bookings">
-                        {/* <div>match</div> */}
+                    {/* <Route exact path="/bookings">
                         <Rooms 
                            rooms={this.findBookings(this.props.bookings)}
                         />
-                    </Route>
+                    </Route> */}
                     <Route exact path="/signup">
                         <Signup postUser={this.props.postUser}/>
                     </Route>

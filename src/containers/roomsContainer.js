@@ -23,11 +23,8 @@ class RoomsContainer extends Component {
         if(this.props.loading) {
             return <div>Loading...</div>
         } else {
-            console.log("RoomsContainer user:", this.props.user)
-            console.log("RoomsContainer findBookings: ", this.findBookings(this.props.bookings))
             return(
                 <div>
-                    {/* { this.props.user.name ? <NavLink to={`/users/${this.props.user.id}/bookings`}>My Rooms</NavLink> : null } */}
                     <Switch>
                         <Route exact path="/rooms/new">
                             <RoomInput 

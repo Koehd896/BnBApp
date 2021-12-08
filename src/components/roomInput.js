@@ -1,5 +1,6 @@
 import React from 'react';
 import uuid from 'react-uuid';
+import { withRouter } from 'react-router-dom';
 
 class RoomInput extends React.Component {
 
@@ -24,6 +25,7 @@ class RoomInput extends React.Component {
     }
 
     handleSubmit = (event) => {
+        console.log("RoomInput props:", this.props)
         event.preventDefault();
         this.props.postRoom(this.state)
         this.setState({
@@ -34,6 +36,7 @@ class RoomInput extends React.Component {
                 price: 0,
                 image: ""
         })
+        this.props.history.push("/rooms")
     }
 
     render() {
@@ -84,4 +87,4 @@ class RoomInput extends React.Component {
 }
 
 
-export default RoomInput;
+export default withRouter(RoomInput);

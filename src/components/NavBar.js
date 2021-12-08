@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 const NavBar = (props) => {
-    console.log("NavBar props:", props)
     return(
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <NavLink to="/" className="navbar-brand">B and B</NavLink>
