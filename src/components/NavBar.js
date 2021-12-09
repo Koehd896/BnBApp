@@ -29,7 +29,7 @@ const NavBar = (props) => {
                 }
                 { props.user.name ? 
                         <li className="nav-item">
-                            <NavLink to={`/bookings`} className="nav-link">My Rooms</NavLink>
+                            <NavLink to="/bookings" className="nav-link">My Rooms</NavLink>
                         </li>
                     :
                         <li className="nav-item">
@@ -44,7 +44,7 @@ const NavBar = (props) => {
 }
 
 const mapStateToProps = (state) => {
-    return {user: state.usersReducer.user}
+    return { user: state.usersReducer.user }
 }
 
 const mapDispatchToProps = (dispatch) => {

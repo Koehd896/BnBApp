@@ -3,6 +3,8 @@ import Room from './Room';
 
 export default function Bookings(props) {
 
+        console.log("bookings hit")
+
         let roomsList = props.rooms.map(room => {
             return <li key={room.uuid}><Room room={room} /></li>
         })

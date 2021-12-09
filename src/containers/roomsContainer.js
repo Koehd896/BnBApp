@@ -6,6 +6,7 @@ import { fetchRooms, postRoom } from '../actions/roomActions';
 import { Route, Switch, NavLink } from 'react-router-dom';
 import RoomView from '../components/RoomView';
 import { postBooking, fetchBookings } from '../actions/bookingActions';
+import Bookings from '../components/Bookings';
 
 class RoomsContainer extends Component {
 
@@ -13,19 +14,23 @@ class RoomsContainer extends Component {
         this.props.fetchRooms()
     }
 
-    findBookings = (bookings) => {
-        return bookings.map(booking => this.props.rooms.find(room => {
-            return room.id === booking.room_id})
-        )
-    }
+    // findBookings = (bookings) => {
+    //     return bookings.map(booking => this.props.rooms.find(room => {
+    //         return room.id === booking.room_id})
+    //     )
+    // }
 
     handleLoading = () => {
+        console.log("RoomsContainer Bookings:", this.props.bookings)
         if(this.props.loading) {
             return <div>Loading...</div>
         } else {
             return(
                 <div>
                     <Switch>
+                        <Route exact path="/bookings">
+                            <Bookings rooms={this.props.bookings}/>
+                        </Route>
                         <Route exact path="/rooms/new">
                             <RoomInput 
                             addRoom={this.props.addRoom} 
