@@ -1,4 +1,4 @@
-class BookingsController < ApplicationController
+class Api::V1::BookingsController < ApplicationController
     # add validation of jwt then delete:
     # skip_before_action :authorized, only: [:create]
 
