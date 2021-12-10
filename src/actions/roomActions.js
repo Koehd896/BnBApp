@@ -1,7 +1,7 @@
 export const fetchRooms = () => {
     return (dispatch) => {
         dispatch({type: "LOADING_ROOMS"})
-        fetch('http://localhost:3001/rooms')
+        fetch('http://localhost:3001/api/v1/rooms')
         .then(response => response.json())
         .then(responseJSON => {
             dispatch({type: "ADD_ROOMS", rooms: responseJSON})
@@ -13,7 +13,7 @@ export const fetchRooms = () => {
 export const postRoom = (room) => {
     return (dispatch) => {
         dispatch({type: "LOADING_ROOMS"})
-        fetch('http://localhost:3001/rooms', {
+        fetch('http://localhost:3001/api/v1/rooms', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

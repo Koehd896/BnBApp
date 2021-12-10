@@ -3,7 +3,7 @@ export const postBooking = (booking) => {
     const token = localStorage.getItem("jwt")
     return (dispatch) => {
         dispatch({type: "LOADING_ROOMS"})
-        fetch('http://localhost:3001/bookings',{
+        fetch('http://localhost:3001/api/v1/bookings',{
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

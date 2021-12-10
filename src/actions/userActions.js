@@ -2,7 +2,7 @@ export const postUser = (user) => {
     return (dispatch) => {
         console.log("postUser user argument:", user)
         dispatch({type: "LOADING_USER"})
-        fetch('http://localhost:3001/users', {
+        fetch('http://localhost:3001/api/v1/users', {
             method: "POST",
             mode: 'cors',
             headers: {
