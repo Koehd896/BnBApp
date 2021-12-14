@@ -2,7 +2,6 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 
 export default function RoomView(props) {
-        // console.log("RoomView props:", props)
         const params = useParams();
         const room =  props.rooms.find(room => room.uuid === parseInt(params["roomId"], 10))
         console.log("RoomView room:", room)
@@ -14,7 +13,7 @@ export default function RoomView(props) {
             loggedIn = false
         }
         const postBooking = () => {
-            return props.postBooking({room_id: room.id, user_id: userId})
+            return props.postBooking({room_id: room.uuid, user_id: userId})
         }
         console.log("loggedIn:", loggedIn)
         return (

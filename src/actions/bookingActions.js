@@ -1,5 +1,4 @@
 export const postBooking = (booking) => {
-    console.log("postBooking hit")
     const token = localStorage.getItem("jwt")
     return (dispatch) => {
         dispatch({type: "LOADING_ROOMS"})
@@ -13,7 +12,10 @@ export const postBooking = (booking) => {
             body: JSON.stringify(booking)
         })
         .then(response => response.json())
-        .then(booking => dispatch({type: "ADD_BOOKING", booking: booking}))
+        .then(booking => {
+            console.log("response booking:", booking)
+            return dispatch({type: "ADD_BOOKING", booking: booking})
+        })
     }
 }
 

@@ -6,7 +6,8 @@ const Bookings = props => {
 
         const rooms = props.bookings.map(booking => props.rooms.find(room => room.uuid === booking.room_id))
 
-        console.log("rooms:", rooms)
+        console.log("props.rooms:", props.rooms)
+        console.log("props.bookings:", props.bookings)
 
         let roomsList = rooms.map(room => {
             return <li key={room.uuid}><Room room={room} /></li>
