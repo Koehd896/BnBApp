@@ -14,11 +14,11 @@ class RoomsContainer extends Component {
         this.props.fetchRooms()
     }
 
-    // findBookings = (bookings) => {
-    //     return bookings.map(booking => this.props.rooms.find(room => {
-    //         return room.id === booking.room_id})
-    //     )
-    // }
+    findBookings = (bookings) => {
+        return bookings.map(booking => this.props.rooms.find(room => {
+            return room.id === booking.room_id})
+        )
+    }
 
     handleLoading = () => {
         console.log("RoomsContainer Bookings:", this.props.bookings)
@@ -28,9 +28,9 @@ class RoomsContainer extends Component {
             return(
                 <div>
                     <Switch>
-                        {/* <Route exact path="/bookings">
+                        <Route exact path="/bookings">
                             <Bookings rooms={this.findBookings(this.props.bookings)}/>
-                        </Route> */}
+                        </Route>
                         <Route exact path="/rooms/new">
                             <RoomInput 
                             addRoom={this.props.addRoom} 

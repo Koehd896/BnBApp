@@ -1,11 +1,14 @@
 import React from 'react';
 import Room from './Room';
+import { connect } from 'react-redux';
 
-export default function Bookings(props) {
+const Bookings = props => {
 
-        console.log("bookings hit")
+        const rooms = props.bookings.map(booking => props.rooms.find(room => room.uuid === booking.room_id))
 
-        let roomsList = props.rooms.map(room => {
+        console.log("rooms:", rooms)
+
+        let roomsList = rooms.map(room => {
             return <li key={room.uuid}><Room room={room} /></li>
         })
         return(
@@ -18,3 +21,13 @@ export default function Bookings(props) {
                 </ul>
             );
 } 
+
+const mapStateToProps = state => {
+    return {
+        bookings: state.bookingsReducer.bookings,
+        rooms: state.roomsReducer.rooms
+    }
+}
+
+
+export default connect(mapStateToProps)(Bookings);  

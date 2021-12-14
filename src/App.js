@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import NavBar from './components/NavBar';
 import UsersContainer from './containers/UsersContainer';
 import { connect } from 'react-redux';
+import Bookings from './components/Bookings';
 
 
 
@@ -18,6 +19,7 @@ class App extends React.Component {
               <Route path="/rooms" component={RoomsContainer} />
               <Route path="/signup" component={UsersContainer} />
               <Route path="/login" component={UsersContainer} />
+              <Route exact path="/bookings" component={Bookings} /> 
           </Switch>
       </Router> 
     )
