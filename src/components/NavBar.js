@@ -19,23 +19,23 @@ const NavBar = (props) => {
                     <NavLink to="/rooms/new" className="nav-link">List a Room</NavLink>
                 </li>
                 { props.user.name ? 
-                    <li className="nav-item" onClick={props.logout}>
-                        <div className="nav-link">Log Out</div>
-                    </li> 
-                    :
-                    <li className="nav-item">
-                        <NavLink to="/login" className="nav-link">Login</NavLink>
-                    </li>
-                }
-                { props.user.name ? 
-                        <li className="nav-item">
-                            <NavLink to="/bookings" className="nav-link">My Rooms</NavLink>
+                    <>
+                        <li className="nav-item" onClick={props.logout}>
+                            <div className="nav-link">Log Out</div>
                         </li>
-                    :
                         <li className="nav-item">
-                            <NavLink to="/signup" className="nav-link">Sign Up</NavLink>
+                                <NavLink to="/bookings" className="nav-link">My Rooms</NavLink>
+                        </li> 
+                    </>
+                    :
+                    <>
+                        <li className="nav-item">
+                            <NavLink to="/login" className="nav-link">Login</NavLink>
                         </li>
-
+                        <li className="nav-item">
+                                <NavLink to="/signup" className="nav-link">Sign Up</NavLink>
+                        </li>
+                    </>
                 }
                 </ul>
             </div>
