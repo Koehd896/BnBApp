@@ -1,7 +1,6 @@
 import React from 'react';
 import Signup from '../components/Signup';
 import Signin from '../components/SignIn';
-import Rooms from '../components/Rooms';
 import { postUser } from '../actions/userActions';
 import { postAuth } from '../actions/authActions';
 import { connect } from 'react-redux';

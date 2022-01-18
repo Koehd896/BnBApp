@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./components/Home";
 import NavBar from './components/NavBar';
 import UsersContainer from './containers/UsersContainer';
-import { connect } from 'react-redux';
 import Bookings from './components/Bookings';
 
 
@@ -24,10 +23,6 @@ class App extends React.Component {
       </Router> 
     )
   }
-}
-
-const mapStateToProps = (state) => {
-  return { user: state.user }
 }
 
 export default App;

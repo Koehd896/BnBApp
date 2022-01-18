@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import RoomInput from '../components/RoomInput';
 import Rooms from '../components/Rooms';
 import { fetchRooms, postRoom } from '../actions/roomActions';
-import { Route, Switch, NavLink } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import RoomView from '../components/RoomView';
-import { postBooking, fetchBookings } from '../actions/bookingActions';
-import Bookings from '../components/Bookings';
+import { postBooking } from '../actions/bookingActions';
+
 
 class RoomsContainer extends Component {
 
